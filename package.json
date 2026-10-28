@@ -1,0 +1,23 @@
+{
+  "name": "renovatio-sport-club",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build && vite build --ssr src/prerender.tsx --outDir .prerender && node scripts/prerender.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "smoke": "esbuild test/smoke.tsx --bundle --platform=node --format=cjs --jsx=automatic --outfile=test/smoke.cjs --log-level=error && node test/smoke.cjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.10"
+  }
+}
